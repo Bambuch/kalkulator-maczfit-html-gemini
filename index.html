@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Diety Maczfit</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Custom styles to apply fonts */
+        body { 
+            font-family: 'Noto Sans', sans-serif; 
+            background-color: #F7F7F7;
+        }
+        .font-serif { 
+            font-family: 'Playfair Display', serif; 
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div id="app" class="min-h-screen flex flex-col items-center justify-center p-4">
+        
+        <!-- Header -->
+        <header class="absolute top-0 left-0 w-full p-6">
+            <svg width="175" height="50" viewBox="0 0 648 674" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_1034_630)">
+                <path d="M638.079 473.328C640.506 474.724 642.429 476.64 643.847 479.064C645.264 481.489 645.962 484.195 645.962 487.182C645.962 490.169 645.253 492.896 643.847 495.342C642.429 497.788 640.506 499.704 638.079 501.079C635.652 502.453 632.999 503.146 630.121 503.146C627.243 503.146 624.59 502.453 622.163 501.079C619.736 499.704 617.813 497.788 616.396 495.342C614.978 492.896 614.269 490.18 614.269 487.182C614.269 484.184 614.978 481.478 616.396 479.064C617.813 476.64 619.725 474.724 622.163 473.328C624.59 471.932 627.243 471.229 630.121 471.229C632.999 471.229 635.652 471.932 638.079 473.328ZM636.522 498.449C638.434 497.356 639.937 495.819 641.043 493.849C642.15 491.879 642.708 489.66 642.708 487.182C642.708 484.703 642.15 482.495 641.043 480.515C639.937 478.545 638.423 477.008 636.522 475.915C634.61 474.822 632.473 474.281 630.121 474.281C627.769 474.281 625.621 474.822 623.688 475.915C621.755 477.008 620.219 478.545 619.091 480.515C617.964 482.485 617.394 484.703 617.394 487.182C617.394 489.66 617.964 491.879 619.091 493.849C620.219 495.819 621.755 497.356 623.688 498.449C625.621 499.542 627.769 500.083 630.121 500.083C632.473 500.083 634.61 499.542 636.522 498.449ZM636.769 494.141C636.866 494.358 636.866 494.585 636.769 494.823C636.672 495.202 636.415 495.483 635.985 495.678C635.566 495.873 635.094 495.916 634.567 495.819C633.955 495.721 633.44 495.332 633.01 494.639C632.58 493.946 632.376 492.994 632.376 491.749C632.376 490.894 632.172 490.212 631.775 489.714C631.378 489.217 630.776 488.968 629.971 488.968H627.35V494.379C627.35 494.715 627.2 495.018 626.888 495.31C626.577 495.602 626.244 495.732 625.868 495.732C625.492 495.732 625.159 495.602 624.88 495.342C624.601 495.083 624.461 494.758 624.461 494.379V479.844C624.461 479.562 624.569 479.303 624.783 479.064C624.998 478.826 625.267 478.707 625.6 478.707H630.765C634.589 478.707 636.49 480.32 636.49 483.556C636.49 485.645 635.362 487.03 633.096 487.69C633.708 488.069 634.224 488.589 634.653 489.26C635.083 489.931 635.287 490.667 635.287 491.468C635.33 492.182 635.416 492.702 635.534 493.037C635.652 493.373 635.878 493.589 636.211 493.676C636.49 493.773 636.683 493.925 636.78 494.141H636.769ZM632.742 485.667C633.354 485.212 633.665 484.584 633.665 483.783C633.665 482.928 633.407 482.333 632.892 481.998C632.376 481.662 631.592 481.5 630.561 481.5H627.382V486.348H630.357C631.345 486.348 632.151 486.121 632.763 485.667H632.742Z" fill="#1D1D1B"/>
+                <path d="M334.453 212.361C353.677 212.361 365.137 198.388 369.293 192.143C369.497 191.84 369.766 191.624 370.109 191.494C377.552 188.669 394.392 179.08 398.216 149.554C401.448 124.563 395.359 110.688 390.966 104.248C390.655 103.794 390.59 103.22 390.784 102.711C391.729 100.136 392.846 96.683 393.769 92.7758C396.508 81.1193 396.154 71.2486 392.706 63.4451C388.722 54.4078 383.019 47.0914 376.21 42.2967C374.448 41.0521 372.816 40.1105 371.387 39.407C370.893 39.1689 370.571 38.6926 370.475 38.1515C367.994 22.6636 358.607 0.0107422 335.806 0.0107422C313.006 0.0107422 302.953 21.8302 300.064 36.5497C299.967 37.0367 299.667 37.4372 299.237 37.6753C293.115 40.9871 282.612 48.8447 278.327 65.1336C277.124 69.7009 276.555 74.1059 276.404 78.2404C276.039 78.143 275.588 78.0239 275.33 77.959C270.164 68.9649 258.114 57.3734 240.071 63.0447C221.363 68.9217 220.439 89.5397 222.963 102.3C223.049 102.711 222.974 103.134 222.759 103.502C219.977 108.34 216.046 117.94 217.872 131.653C219.419 143.266 225.669 150.203 230.191 153.786C230.62 154.132 230.867 154.652 230.846 155.204C230.599 162.217 231.759 174.988 240.78 189.188C250.489 204.481 264.053 206.311 269.982 206.311C270.057 206.311 270.132 206.311 270.207 206.311C273.322 208.172 279.487 211.138 287.294 211.138C287.133 211.138 286.972 211.138 286.811 211.127C289.024 214.46 291.343 217.751 293.824 220.965C294.189 221.43 294.619 221.961 295.092 222.524C257.577 229.548 229.16 262.786 229.16 304.087C229.16 330.928 241.167 355.951 259.876 372.359C260.81 376.558 261.852 381.191 263.226 385.801L264.333 389.719C265.997 395.878 264.891 402.047 263.774 409.32C262.668 416.041 261.551 422.762 262.668 430.609C263.226 435.09 264.333 440.134 265.45 444.614C263.785 444.052 262.12 443.5 261.003 443.5C258.222 443.5 255.44 445.177 253.775 447.98C252.669 450.221 252.111 453.024 253.217 455.264C254.882 458.62 258.769 460.86 264.891 462.548C257.105 467.592 252.111 475.991 252.111 485.515V487.398C252.111 489.141 253.507 490.548 255.236 490.548H303.447C305.176 490.548 306.572 489.141 306.572 487.398V485.515C306.572 475.991 301.568 467.029 293.792 462.548C299.903 460.871 304.349 458.63 305.466 455.264C306.572 453.024 306.572 450.221 304.908 447.98C303.243 445.177 301.02 443.5 297.68 443.5C296.015 443.5 294.898 444.062 293.234 444.614C294.34 440.134 294.898 435.09 296.015 430.609C297.132 423.325 296.015 416.041 294.909 409.32C293.824 403.854 293.298 397.988 293.781 393.02C299.001 397.804 304.392 403.952 309.923 403.952C315.068 403.952 320.105 398.692 324.981 394.103C325.271 398.389 325.539 403.194 324.615 407.848C323.509 414.569 322.929 422.73 324.035 430.566C324.594 435.047 326.495 442.201 327.601 446.682C325.936 446.119 323.069 443.186 319.911 443.489C317.14 443.749 314.359 445.166 312.683 447.97C311.566 450.21 311.019 453.013 312.125 455.254C313.79 458.609 317.677 460.849 323.799 462.537C316.024 467.581 311.019 475.98 311.019 485.504V487.604C311.019 489.227 312.329 490.548 313.94 490.548H362.57C364.181 490.548 365.491 489.227 365.491 487.604V485.504C365.491 475.98 360.486 467.018 352.711 462.537C358.822 460.86 363.268 458.62 364.385 455.254C365.502 453.013 365.502 450.21 363.827 447.97C362.162 445.166 359.939 443.489 356.599 443.489C354.934 443.489 353.817 444.052 352.152 444.604C353.269 440.123 354.29 437.157 354.934 430.598C355.578 424.04 354.934 416.03 353.817 409.309C352.711 402.588 352.142 394.579 353.259 389.709C353.591 388.258 354.214 385.369 354.816 383.247C355.385 381.223 356.191 378.204 357.06 374.783C377.423 358.484 390.687 332.27 390.687 304.065C390.687 263.565 363.365 230.814 326.924 222.935C328.858 219.471 330.673 215.921 332.37 212.296C333.078 212.328 333.766 212.35 334.453 212.35V212.361ZM294.608 103.567L293.427 101.142C293.352 100.991 286.177 85.9464 290.785 68.4563C294.995 52.4597 307.238 48.1629 307.7 48.0005L310.643 47.0589C311.287 46.8533 311.749 46.2797 311.824 45.6086L312.168 42.524C312.168 42.4483 313.113 34.4283 316.883 26.7114C321.393 17.4793 327.58 12.9877 335.806 12.9877C355.213 12.9877 358.07 42.4591 358.22 44.115C358.22 44.1583 358.22 44.2016 358.22 44.2449L358.253 47.5243C358.263 48.5742 358.854 49.2777 359.67 49.4184L363.15 50.0353C363.15 50.0353 363.236 50.0461 363.279 50.0677C364.224 50.3167 374.137 53.3147 380.924 68.6944C385.553 79.1928 379.818 96.2068 377.187 101.932C377.176 101.965 377.155 101.997 377.133 102.03L375.447 105.212C375.05 105.958 375.243 106.878 375.909 107.387L378.68 109.563C378.744 109.617 378.798 109.66 378.852 109.725C379.399 110.309 381.569 112.799 383.395 117.821C385.392 123.308 387.358 132.984 385.435 147.855C381.848 175.551 364.782 179.653 364.138 179.794L361.99 180.173C361.475 180.259 361.023 180.584 360.776 181.06L359.67 183.117C359.327 183.766 351.991 197.143 337.804 199.102C342.315 186.677 345.311 173.646 346.299 160.518C347.105 139.77 346.911 119.65 343.195 99.3022C342.25 94.3993 339.608 84.5178 338.105 79.7664C337.815 78.8573 336.569 79.1387 336.623 80.102C336.913 85.059 337.471 95.4924 337.546 100.417C337.761 120.472 337.621 139.857 336.698 159.868C335.634 173.084 332.971 186.071 329.556 198.918C317.495 196.602 311.824 185.097 311.599 184.621L310.922 183.182C310.761 182.846 310.503 182.565 310.17 182.391L308.763 181.645C308.602 181.558 293.03 173.073 286.704 150.322C280.464 127.875 292.944 107.733 293.062 107.549L294.512 105.255C294.834 104.746 294.866 104.108 294.608 103.567ZM275.975 194.611C275.975 194.611 275.921 194.567 275.889 194.535L274.493 193.344C274.117 193.02 273.623 192.879 273.129 192.955L271.099 193.258C270.626 193.323 259.51 194.557 251.649 182.164C241.371 165.984 243.938 152.931 244.045 152.444L245.012 148.753C245.226 147.941 244.818 147.086 244.056 146.74L240.479 145.117C240.136 144.954 232.124 140.939 230.652 129.91C228.805 116.067 234.691 108.729 234.884 108.491L236.592 106.532C236.978 106.088 237.107 105.482 236.946 104.919L236.237 102.419C236.173 102.192 229.987 79.8205 243.905 75.4372C257.889 71.043 264.419 84.7343 265.106 86.282L266.126 88.8795C266.373 89.4964 266.942 89.9185 267.608 89.9726L270.487 90.1783C270.712 90.1999 273.837 90.687 277.5 92.7542C278.37 97.3865 279.562 101.131 280.496 103.599C276.576 111.089 267.995 131.133 274.31 153.829C280.711 176.839 295.177 188.225 300.655 191.84C298.883 193.929 296.391 196.094 293.266 197.143C284.03 200.25 276.673 195.109 275.996 194.611H275.975ZM289.271 211.051C289.142 211.051 289.013 211.062 288.884 211.073C289.013 211.073 289.142 211.062 289.271 211.051ZM286.006 412.112C287.123 418.271 287.67 424.44 287.123 430.036C284.899 442.363 282.676 451.325 281.559 455.243H278.23C277.124 450.762 274.901 441.8 272.678 430.036C271.561 424.44 272.678 418.271 273.784 412.112C274.901 404.828 276.071 393.681 274.342 388.583C273.58 386.353 273.504 385.693 273.236 384.665C273.021 383.875 272.849 382.609 272.699 381.58C276.812 383.983 281.14 386.007 285.64 387.598C283.686 395.304 284.942 404.493 286.027 412.112H286.006ZM258.093 452.115C257.942 449.615 258.931 448.662 260.842 448.814C263.216 449.009 266.824 451.92 267.662 455.243C267.791 455.762 267.501 456.747 267.501 456.747C261.884 458.219 258.243 454.626 258.093 452.115ZM295.457 480.45H263.226C265.45 473.166 272.119 468.122 279.347 468.122C287.133 468.122 293.244 473.166 295.467 480.45H295.457ZM298.646 448.965C301.245 449.084 300.794 450.556 301.578 451.736C302.148 452.591 300.601 454.81 297.658 455.795C294.716 456.78 293.631 456.78 291 455.795V455.232C293.33 450.621 296.037 448.835 298.636 448.954L298.646 448.965ZM317.882 452.299C317.753 449.669 319.535 449.344 321.007 449.344C322.124 449.344 326.613 451.4 328.804 455.243V456.087C322.972 457.591 317.634 454.355 317.882 452.299ZM354.88 480.547H322.639C324.862 473.263 331.532 468.22 338.76 468.22C346.546 468.22 352.657 473.263 354.88 480.547ZM358.628 449.593C360.476 449.918 360.54 451.39 360.605 452.104C360.669 452.807 360.218 454.03 359.08 454.615C357.941 455.199 356.91 455.708 351.594 455.806C353.785 451.271 356.792 449.279 358.639 449.604L358.628 449.593ZM345.934 411.788C347.04 417.946 347.556 422.86 346.965 429.613C346.374 436.367 343.249 450.762 342.132 454.68H338.803C337.686 450.199 335.473 441.238 333.25 429.473C332.133 423.877 332.563 417.492 333.669 411.322C334.765 404.136 336.397 395.672 334.829 387.371C338.985 385.856 342.981 383.983 346.804 381.775C346.664 382.717 346.546 383.648 346.385 384.113C346.074 385.001 345.687 386.635 345.354 388.291C343.797 395.759 344.828 403.941 345.934 411.788ZM379.807 308.416C378.98 323.049 374.062 337.574 365.717 349.739C356.695 362.878 344.065 372.77 330.157 377.576C324.723 379.459 320.448 383.518 316.313 387.447C314.498 389.167 311.609 391.917 309.945 392.891C308.302 391.917 305.456 389.2 303.662 387.501C299.538 383.561 295.263 379.492 289.818 377.619C275.878 372.835 263.216 362.954 254.173 349.793C245.796 337.617 240.866 323.071 240.039 308.416C252.809 332.032 279.293 348.267 309.923 348.267C340.553 348.267 367.038 332.032 379.807 308.416ZM309.923 221.106C306.787 221.106 303.705 221.301 300.666 221.658C299.785 220.067 299.012 218.627 298.432 217.512C297.186 215.066 295.951 212.642 294.726 210.218C295.575 210.012 296.445 209.752 297.325 209.46C301.482 208.064 305.047 205.694 307.808 203.172C308.441 202.598 309.397 202.587 310.041 203.15C314.058 206.679 319.342 209.936 326.001 211.441C324.938 215.012 323.831 218.584 322.714 222.145C318.547 221.474 314.273 221.117 309.913 221.117L309.923 221.106Z" fill="#1D1D1B"/>
+                <path d="M604.485 584.071C606.708 584.071 608.931 585.748 607.267 587.426C607.267 589.666 605.602 592.469 605.602 592.469C605.602 592.469 591.146 617.677 571.138 617.677C561.128 617.677 548.906 610.955 544.46 601.431C538.349 608.715 527.781 617.677 516.118 617.677C501.114 617.677 491.104 609.278 490.546 596.387C482.76 601.983 471.096 607.589 454.976 607.589C453.311 632.796 455.534 664.162 455.534 664.162C455.534 688.243 432.186 664.725 432.186 629.993C432.186 622.709 432.744 614.873 433.292 607.027C427.181 612.622 418.847 618.229 409.396 618.229C397.722 618.229 393.275 614.311 379.936 614.311C370.485 614.311 364.374 618.229 359.37 618.229C354.923 618.229 349.918 612.07 349.918 608.141C349.918 599.743 386.606 576.213 398.828 561.093C391.041 561.093 383.824 557.175 376.038 557.175C369.927 557.175 366.587 561.093 361.582 570.618C356.577 580.142 352.689 587.415 349.908 591.896C349.349 593.021 348.802 593.573 348.802 593.573C348.802 593.573 332.123 618.78 303.222 618.78C289.883 618.78 274.879 613.737 269.316 600.295C263.205 608.141 252.637 618.78 239.298 618.78C228.182 618.78 219.848 612.622 218.184 601.42C218.184 601.42 204.845 618.78 189.283 618.78C178.725 618.78 169.274 609.819 169.274 597.491C169.274 568.366 193.729 537.001 215.96 537.001C232.629 537.001 238.192 546.525 238.192 546.525C244.303 546.525 252.637 548.766 252.637 556.05C252.637 562.208 240.963 585.175 240.963 599.18C240.963 602.535 243.186 604.775 246.515 604.775C255.966 604.775 264.859 592.448 267.641 588.53V587.404C267.641 560.52 292.095 536.99 312.662 536.99C326.559 536.99 335.452 547.077 335.452 556.591C335.452 563.875 328.224 572.273 323.219 572.273C317.667 572.273 312.662 568.355 312.662 563.875C312.662 557.154 320.996 556.028 320.996 551.547C320.996 549.307 318.214 547.066 314.885 547.066C303.211 547.066 291.537 566.667 291.537 585.153C291.537 599.158 300.429 605.879 311.545 605.879C329.889 605.879 342.111 587.393 342.111 587.393C345.998 581.798 353.785 570.033 359.896 550.984C363.784 539.22 369.905 536.979 378.798 536.979C392.137 536.979 399.912 540.897 409.363 540.897C415.474 540.897 419.921 536.979 422.702 536.979C426.59 536.979 431.037 543.7 431.037 548.181C431.037 554.34 395.466 577.306 378.239 594.667C396.583 594.667 403.253 604.754 416.033 604.754C423.819 604.754 431.595 595.792 435.483 590.749C445.492 533.613 472.718 474.8 497.731 474.8C506.624 474.8 516.075 485.439 516.075 492.723C516.075 509.532 484.951 560.498 462.719 578.421C459.937 580.661 457.714 586.82 456.608 595.229C457.167 595.229 459.39 595.792 461.054 595.792C478.281 595.792 491.62 581.787 493.843 578.995C497.731 564.427 503.853 548.192 507.182 540.345C508.288 538.105 510.511 536.427 512.735 536.427C518.845 536.427 528.855 545.389 528.855 548.192C528.855 560.52 517.739 577.317 517.739 596.918C517.739 601.961 520.521 604.765 524.409 604.765C532.743 604.765 541.088 594.677 544.417 589.645C545.534 577.328 551.087 557.154 557.198 538.116H551.634C550.528 538.116 549.97 537.553 549.97 536.438C549.97 534.198 553.31 529.154 556.081 529.154H559.968C563.856 517.952 567.744 508.428 571.643 501.707C572.76 499.466 574.983 497.789 577.206 497.789C583.317 497.789 592.768 506.187 592.768 510.116C592.768 511.794 589.986 519.078 586.098 529.154H599.437C600.543 529.154 601.102 529.717 601.102 530.832C601.102 533.072 597.762 538.116 594.991 538.116H582.211C575.541 556.039 568.313 579.005 568.313 593.563C568.313 599.721 572.76 604.202 578.87 604.202C589.986 604.202 600.544 586.841 600.544 586.841C600.544 586.841 602.208 584.038 604.431 584.038L604.485 584.071ZM502.779 487.734C495.551 487.734 481.653 516.859 471.655 552.705C484.993 542.618 507.225 503.979 507.225 491.652C507.225 489.412 505.56 487.734 502.779 487.734ZM201.537 602.557C210.988 602.557 228.773 572.306 228.773 557.186C228.773 551.028 225.444 548.224 221.545 548.224C209.871 548.224 195.426 576.235 195.426 593.595C195.426 599.201 197.09 602.557 201.537 602.557ZM533.355 527.498C542.248 527.498 549.476 517.411 549.476 506.772C549.476 500.051 545.029 495.57 538.918 495.57C530.026 495.57 521.692 505.657 521.692 516.296C522.798 523.017 527.803 527.498 533.366 527.498H533.355ZM102.054 609.278C107.058 595.273 114.834 575.109 125.402 552.705C130.955 540.378 136.518 529.176 142.081 519.662C138.741 532.542 136.518 544.306 134.295 554.394C131.513 569.514 129.848 584.644 129.848 598.087C129.848 608.726 131.513 616.573 134.295 621.053C137.624 626.097 144.304 628.337 153.744 628.337H158.749C158.749 628.337 153.744 622.406 153.744 604.256C153.744 586.105 157.074 561.126 163.754 528.635C170.423 496.154 177.651 471.499 181.539 462.538C177.093 460.86 170.423 459.183 168.2 459.183C164.86 459.183 162.637 460.297 160.414 461.986C158.749 463.663 156.526 465.904 154.303 469.832C146.517 481.034 136.518 498.395 124.285 521.361C116.499 535.929 109.829 549.372 104.835 561.688C104.835 558.333 105.394 554.967 105.394 551.049C106.5 534.252 107.617 520.799 107.617 510.722C107.617 490.559 105.394 477.116 101.506 469.27C97.0596 460.871 89.8317 456.39 80.9391 456.39C70.3818 456.39 59.7816 459.94 50.3413 467.776C40.8902 475.623 36.4761 484.952 36.4761 494.477C36.4761 499.52 37.8078 504.044 40.9224 509.045C46.5501 518.05 57.6014 516.329 57.6014 516.329C57.6014 516.329 55.4212 512.021 55.7971 502.854C56.1193 495.104 58.7076 488.329 62.5954 482.16C66.4832 476.564 72.5513 473.285 77.599 473.761C80.3484 474.021 80.3269 476.175 78.7052 479.92C77.0835 483.664 22.568 603.141 22.568 603.141C17.5632 614.343 14.7816 620.501 13.6754 623.305L12.0107 627.785C12.0107 627.785 18.7983 628.197 23.685 626.108C28.5716 624.019 37.1527 615.122 43.1348 601.463C49.1169 587.805 63.519 554.643 66.4832 547.694C69.4474 540.746 83.7099 506.804 83.7099 506.804C83.7099 514.651 83.7099 522.303 83.1515 539.295C82.593 556.288 82.1097 565.433 82.1097 574.99C82.1097 584.547 83.0656 593.498 84.8162 600.349C87.093 609.234 92.9569 610.739 96.4904 610.436C100.024 610.133 102.054 609.321 102.054 609.321V609.278Z" fill="#1D1D1B"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_1034_630">
+                <rect width="633.962" height="674" fill="white" transform="translate(12)"/>
+                </clipPath>
+                </defs>
+            </svg>
+        </header>
+
+        <!-- Main Content Area -->
+        <main id="main-content" class="w-full max-w-4xl mx-auto mt-20 md:mt-16">
+            <!-- Progress Bar Container -->
+            <div id="progress-bar-container" class="px-4 hidden">
+                <div class="w-full bg-gray-200 rounded-full h-2.5 mb-8">
+                    <div id="progress-bar" class="bg-red-600 h-2.5 rounded-full transition-all duration-500" style="width: 0%"></div>
+                </div>
+            </div>
+
+            <!-- Step Content -->
+            <div class="p-4 transition-opacity duration-500">
+                <!-- Welcome Step -->
+                <div id="welcome-step" class="text-center">
+                    <h1 class="text-4xl md:text-5xl font-bold font-serif text-gray-800 mb-4">Dobierz dietę idealną dla siebie</h1>
+                    <p class="text-lg text-gray-600 mb-8 max-w-xl mx-auto">W kilku prostych krokach pomożemy Ci znaleźć idealny plan żywieniowy. Gotowy?</p>
+                    <button id="start-btn" class="bg-red-600 text-white font-bold py-4 px-10 rounded-lg text-lg hover:bg-red-700 transition-transform transform hover:scale-105">
+                      Rozpocznij
+                    </button>
+                </div>
+
+                <!-- Basic Data Step -->
+                <div id="basic-data-step" class="hidden">
+                    <h2 class="text-3xl font-bold font-serif text-center mb-8">Opowiedz nam o sobie</h2>
+                    <div class="space-y-6">
+                        <div>
+                            <p class="text-lg font-medium text-gray-800 mb-3 text-center">Płeć</p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <button data-gender="female" class="selection-tile w-full text-left p-4 md:p-5 border-2 rounded-lg transition-all duration-200 bg-white border-gray-300 hover:border-red-500 hover:shadow-md">
+                                    <p class="font-bold text-lg">Kobieta</p>
+                                </button>
+                                <button data-gender="male" class="selection-tile w-full text-left p-4 md:p-5 border-2 rounded-lg transition-all duration-200 bg-white border-gray-300 hover:border-red-500 hover:shadow-md">
+                                    <p class="font-bold text-lg">Mężczyzna</p>
+                                </button>
+                            </div>
+                            <p id="gender-error" class="text-red-500 text-sm mt-2 text-center hidden">Wybierz płeć.</p>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Wiek</label>
+                                <div class="relative">
+                                    <input id="age-input" type="number" placeholder="np. 30" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500">
+                                    <span class="absolute inset-y-0 right-0 flex items-center pr-4 text-gray-500">lat</span>
+                                </div>
+                                <p id="age-error" class="text-red-500 text-sm mt-1 hidden">Wiek musi być większy niż 10.</p>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Wzrost</label>
+                                <div class="relative">
+                                    <input id="height-input" type="number" placeholder="np. 175" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500">
+                                    <span class="absolute inset-y-0 right-0 flex items-center pr-4 text-gray-500">cm</span>
+                                </div>
+                                <p id="height-error" class="text-red-500 text-sm mt-1 hidden">Wzrost musi być większy niż 100 cm.</p>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Waga</label>
+                                <div class="relative">
+                                    <input id="weight-input" type="number" placeholder="np. 70" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500">
+                                    <span class="absolute inset-y-0 right-0 flex items-center pr-4 text-gray-500">kg</span>
+                                </div>
+                                <p id="weight-error" class="text-red-500 text-sm mt-1 hidden">Waga musi być większa niż 30 kg.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-10 flex justify-center">
+                        <button id="basic-data-next-btn" class="bg-red-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-red-700 transition">Dalej</button>
+                    </div>
+                </div>
+                
+                <!-- Activity Step -->
+                <div id="activity-step" class="hidden">
+                    <h2 class="text-3xl font-bold font-serif text-center mb-8">Jaki jest Twój poziom aktywności?</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- Activity tiles will be generated by JS -->
+                    </div>
+                </div>
+
+                <!-- Goal Step -->
+                <div id="goal-step" class="hidden">
+                    <h2 class="text-3xl font-bold font-serif text-center mb-8">Jaki jest Twój główny cel?</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <!-- Goal tiles will be generated by JS -->
+                    </div>
+                </div>
+
+                <!-- Preferences Step -->
+                <div id="preferences-step" class="hidden">
+                    <h2 class="text-3xl font-bold font-serif text-center mb-2">Jakie są Twoje preferencje?</h2>
+                    <p class="text-gray-600 text-center mb-8">(Opcjonalnie, możesz pominąć ten krok)</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- Preference checkboxes will be generated by JS -->
+                    </div>
+                    <div class="mt-10 flex justify-center">
+                        <button id="preferences-next-btn" class="bg-red-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-red-700 transition">Zobacz wyniki</button>
+                    </div>
+                </div>
+
+                <!-- Recommendation Step -->
+                <div id="recommendation-step" class="text-center hidden">
+                    <h2 class="text-3xl font-bold font-serif mb-4">Twoja spersonalizowana rekomendacja!</h2>
+                    <p id="recommendation-intro" class="text-gray-600 mb-8 max-w-2xl mx-auto"></p>
+                    <div class="bg-white p-8 rounded-xl shadow-2xl border border-gray-200 max-w-lg mx-auto">
+                        <p class="text-lg text-gray-700">Rekomendowana dieta:</p>
+                        <p id="diet-name" class="text-4xl font-extrabold text-red-600 font-serif my-2"></p>
+                        <p class="text-lg text-gray-700">w wariancie kalorycznym:</p>
+                        <p id="diet-calories" class="text-6xl font-extrabold text-gray-800 my-3"></p>
+                        <div id="diet-details" class="text-xs text-gray-500 mt-4 bg-gray-50 p-3 rounded-md"></div>
+                    </div>
+                    <button onclick="alert('Przekierowanie do strony zamówienia...')" class="mt-10 bg-red-600 text-white font-bold py-4 px-10 rounded-lg text-lg hover:bg-red-700 transition-transform transform hover:scale-105">
+                        Przejdź do zamówienia
+                    </button>
+                    <button id="reset-btn" class="block mx-auto mt-6 text-gray-600 hover:text-red-600 transition">
+                        Zacznij od nowa
+                    </button>
+                </div>
+
+            </div>
+            
+            <!-- Back Button -->
+            <div id="back-btn-container" class="mt-8 text-center hidden">
+              <button id="back-btn" class="text-gray-500 hover:text-gray-800 transition">
+                &larr; Wróć
+              </button>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="w-full text-center p-4 mt-auto">
+            <p class="text-sm text-gray-400">&copy; 2025 Maczfit. Wszelkie prawa zastrzeżone.</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- DATA ---
+            const DIET_DATA = {
+                diets: [
+                    { id: 'FIT', name: 'Dieta Fit & Slim', availableCalories: [1100, 1400, 1500, 2000], tags: ['classic'] },
+                    { id: 'COMFORT', name: 'Dieta Comfort', availableCalories: [1200, 1500, 2000], tags: ['classic'] },
+                    { id: 'VEGE', name: 'Dieta Wegetariańska', availableCalories: [1200, 1500, 2000], tags: ['vege'] },
+                    { id: 'VEGAN', name: 'Dieta Wegańska', availableCalories: [1200, 1500, 2000], tags: ['vegan'] },
+                    { id: 'KETO', name: 'Dieta Ketogeniczna', availableCalories: [1500, 2000], tags: ['keto'] },
+                    { id: 'NO_LACTOSE', name: 'Bez Laktozy i Glutenu', availableCalories: [1200, 1500, 2000], tags: ['no-lactose', 'no-gluten'] },
+                ],
+                activityLevels: {
+                    low: { label: 'Niska', pal: 1.4, description: 'Praca siedząca, brak regularnych treningów.' },
+                    moderate: { label: 'Umiarkowana', pal: 1.6, description: 'Praca siedząca i treningi 2-3 razy w tygodniu.' },
+                    high: { label: 'Wysoka', pal: 1.8, description: 'Praca fizyczna lub codzienne intensywne treningi.' },
+                    very_high: { label: 'Bardzo wysoka', pal: 2.0, description: 'Profesjonalni sportowcy, bardzo ciężkie treningi.' },
+                },
+                goals: {
+                    lose: { label: 'Redukcja wagi', modifier: -400 },
+                    maintain: { label: 'Utrzymanie wagi', modifier: 0 },
+                    gain: { label: 'Budowa masy mięśniowej', modifier: 400 },
+                },
+                preferences: [
+                    { id: 'vege', name: 'Wegetariańska' },
+                    { id: 'vegan', name: 'Wegańska' },
+                    { id: 'keto', name: 'Ketogeniczna' },
+                    { id: 'no-lactose', name: 'Bez laktozy' },
+                    { id: 'no-gluten', name: 'Bez glutenu' },
+                ]
+            };
+
+            // --- STATE ---
+            const state = {
+                currentStep: 0,
+                totalSteps: 5,
+                userData: {
+                    gender: null,
+                    age: '',
+                    height: '',
+                    weight: '',
+                    activity: null,
+                    goal: null,
+                    preferences: [],
+                }
+            };
+
+            // --- DOM ELEMENTS ---
+            const steps = [
+                document.getElementById('welcome-step'),
+                document.getElementById('basic-data-step'),
+                document.getElementById('activity-step'),
+                document.getElementById('goal-step'),
+                document.getElementById('preferences-step'),
+                document.getElementById('recommendation-step'),
+            ];
+            const progressBarContainer = document.getElementById('progress-bar-container');
+            const progressBar = document.getElementById('progress-bar');
+            const backBtnContainer = document.getElementById('back-btn-container');
+
+            // --- FUNCTIONS ---
+            
+            // Function to render the current step
+            function renderStep() {
+                steps.forEach((step, index) => {
+                    if (index === state.currentStep) {
+                        step.classList.remove('hidden');
+                    } else {
+                        step.classList.add('hidden');
+                    }
+                });
+
+                // Update progress bar
+                if (state.currentStep > 0 && state.currentStep <= state.totalSteps) {
+                    progressBarContainer.classList.remove('hidden');
+                    const progress = (state.currentStep / state.totalSteps) * 100;
+                    progressBar.style.width = `${progress}%`;
+                } else {
+                    progressBarContainer.classList.add('hidden');
+                }
+
+                // Show/hide back button
+                if (state.currentStep > 0 && state.currentStep <= state.totalSteps) {
+                    backBtnContainer.classList.remove('hidden');
+                } else {
+                    backBtnContainer.classList.add('hidden');
+                }
+            }
+
+            // Function to calculate diet recommendation
+            function calculateRecommendation(data) {
+                const { gender, age, height, weight, activity, goal, preferences } = data;
+                if (!gender || !age || !height || !weight || !activity || !goal) return null;
+
+                let bmr = (gender === 'female')
+                    ? (10 * weight) + (6.25 * height) - (5 * age) - 161
+                    : (10 * weight) + (6.25 * height) - (5 * age) + 5;
+
+                const pal = DIET_DATA.activityLevels[activity].pal;
+                const tmr = bmr * pal;
+                const goalModifier = DIET_DATA.goals[goal].modifier;
+                const targetCalories = tmr + goalModifier;
+
+                let filteredDiets = DIET_DATA.diets;
+                if (preferences.length > 0) {
+                    const prefFiltered = DIET_DATA.diets.filter(diet => preferences.every(pref => diet.tags.includes(pref)));
+                    if(prefFiltered.length > 0) filteredDiets = prefFiltered;
+                }
+                
+                const bestDiet = filteredDiets[0];
+                const closestCalories = bestDiet.availableCalories.reduce((prev, curr) => 
+                    (Math.abs(curr - targetCalories) < Math.abs(prev - targetCalories) ? curr : prev)
+                );
+
+                return {
+                    dietName: bestDiet.name,
+                    calories: closestCalories,
+                    tmr: Math.round(tmr),
+                    target: Math.round(targetCalories),
+                };
+            }
+
+            // Function to populate and show the recommendation
+            function showRecommendation() {
+                const recommendation = calculateRecommendation(state.userData);
+                if (recommendation) {
+                    document.getElementById('recommendation-intro').textContent = `Na podstawie Twojego celu (${DIET_DATA.goals[state.userData.goal].label.toLowerCase()}) i aktywności fizycznej, przygotowaliśmy dla Ciebie idealne rozwiązanie.`;
+                    document.getElementById('diet-name').textContent = recommendation.dietName;
+                    document.getElementById('diet-calories').innerHTML = `${recommendation.calories} <span class="text-4xl font-bold">kcal</span>`;
+                    document.getElementById('diet-details').textContent = `Twoje całkowite zapotrzebowanie (TMR) to ok. ${recommendation.tmr} kcal. Aby osiągnąć cel, sugerujemy spożycie na poziomie ok. ${recommendation.target} kcal.`;
+                }
+                state.currentStep = steps.length - 1;
+                renderStep();
+            }
+
+            // --- DYNAMIC CONTENT GENERATION ---
+
+            // Generate Activity Tiles
+            const activityContainer = document.querySelector('#activity-step .grid');
+            Object.entries(DIET_DATA.activityLevels).forEach(([key, { label, description }]) => {
+                const button = document.createElement('button');
+                button.className = 'selection-tile w-full text-left p-4 md:p-5 border-2 rounded-lg transition-all duration-200 bg-white border-gray-300 hover:border-red-500 hover:shadow-md';
+                button.innerHTML = `<p class="font-bold text-lg">${label}</p><p class="text-sm mt-1 text-gray-600">${description}</p>`;
+                button.onclick = () => {
+                    state.userData.activity = key;
+                    state.currentStep++;
+                    renderStep();
+                };
+                activityContainer.appendChild(button);
+            });
+
+            // Generate Goal Tiles
+            const goalContainer = document.querySelector('#goal-step .grid');
+            Object.entries(DIET_DATA.goals).forEach(([key, { label }]) => {
+                const button = document.createElement('button');
+                button.className = 'selection-tile w-full text-left p-4 md:p-5 border-2 rounded-lg transition-all duration-200 bg-white border-gray-300 hover:border-red-500 hover:shadow-md';
+                button.innerHTML = `<p class="font-bold text-lg">${label}</p>`;
+                button.onclick = () => {
+                    state.userData.goal = key;
+                    state.currentStep++;
+                    renderStep();
+                };
+                goalContainer.appendChild(button);
+            });
+
+            // Generate Preference Checkboxes
+            const preferenceContainer = document.querySelector('#preferences-step .grid');
+            DIET_DATA.preferences.forEach(pref => {
+                const label = document.createElement('label');
+                label.className = 'flex items-center p-4 border-2 rounded-lg cursor-pointer transition-all duration-200 bg-white hover:border-red-500';
+                label.innerHTML = `
+                    <input type="checkbox" value="${pref.id}" class="h-5 w-5 rounded border-gray-300 text-red-600 focus:ring-red-500">
+                    <span class="ml-4 text-lg font-medium text-gray-800">${pref.name}</span>
+                `;
+                preferenceContainer.appendChild(label);
+            });
+
+            // --- EVENT LISTENERS ---
+
+            // Start button
+            document.getElementById('start-btn').addEventListener('click', () => {
+                state.currentStep++;
+                renderStep();
+            });
+
+            // Back button
+            document.getElementById('back-btn').addEventListener('click', () => {
+                if (state.currentStep > 0) {
+                    state.currentStep--;
+                    renderStep();
+                }
+            });
+            
+            // Reset button
+            document.getElementById('reset-btn').addEventListener('click', () => {
+                state.currentStep = 0;
+                state.userData = { gender: null, age: '', height: '', weight: '', activity: null, goal: null, preferences: [] };
+                // Clear inputs and selections
+                document.getElementById('age-input').value = '';
+                document.getElementById('height-input').value = '';
+                document.getElementById('weight-input').value = '';
+                document.querySelectorAll('#preferences-step input[type="checkbox"]').forEach(cb => cb.checked = false);
+                renderStep();
+            });
+
+            // Basic Data Step Logic
+            const genderTiles = document.querySelectorAll('#basic-data-step .selection-tile');
+            genderTiles.forEach(tile => {
+                tile.addEventListener('click', () => {
+                    state.userData.gender = tile.dataset.gender;
+                    genderTiles.forEach(t => t.classList.remove('bg-red-600', 'border-red-600', 'text-white', 'shadow-lg'));
+                    tile.classList.add('bg-red-600', 'border-red-600', 'text-white', 'shadow-lg');
+                });
+            });
+
+            document.getElementById('basic-data-next-btn').addEventListener('click', () => {
+                // Validation
+                let isValid = true;
+                state.userData.age = document.getElementById('age-input').value;
+                state.userData.height = document.getElementById('height-input').value;
+                state.userData.weight = document.getElementById('weight-input').value;
+
+                // Gender
+                if (!state.userData.gender) {
+                    document.getElementById('gender-error').classList.remove('hidden');
+                    isValid = false;
+                } else {
+                    document.getElementById('gender-error').classList.add('hidden');
+                }
+                // Age
+                if (!state.userData.age || state.userData.age <= 10) {
+                    document.getElementById('age-error').classList.remove('hidden');
+                    isValid = false;
+                } else {
+                    document.getElementById('age-error').classList.add('hidden');
+                }
+                // Height
+                if (!state.userData.height || state.userData.height <= 100) {
+                    document.getElementById('height-error').classList.remove('hidden');
+                    isValid = false;
+                } else {
+                    document.getElementById('height-error').classList.add('hidden');
+                }
+                // Weight
+                if (!state.userData.weight || state.userData.weight <= 30) {
+                    document.getElementById('weight-error').classList.remove('hidden');
+                    isValid = false;
+                } else {
+                    document.getElementById('weight-error').classList.add('hidden');
+                }
+
+                if (isValid) {
+                    state.currentStep++;
+                    renderStep();
+                }
+            });
+            
+            // Preferences Step Logic
+            document.getElementById('preferences-next-btn').addEventListener('click', () => {
+                const selectedPrefs = [];
+                document.querySelectorAll('#preferences-step input[type="checkbox"]:checked').forEach(checkbox => {
+                    selectedPrefs.push(checkbox.value);
+                });
+                state.userData.preferences = selectedPrefs;
+                showRecommendation();
+            });
+
+
+            // --- INITIAL RENDER ---
+            renderStep();
+        });
+    </script>
+
+</body>
+</html>
